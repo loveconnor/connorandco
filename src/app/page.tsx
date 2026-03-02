@@ -79,7 +79,7 @@ const projects = [
       </svg>
     ),
   },
-  {
+      category: 'React/Next.js',
     caseStudyHref: '/work/portfolio',
     year: '2024',
     category: 'Webflow Frontend',
