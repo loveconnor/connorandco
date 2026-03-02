@@ -151,18 +151,18 @@ export function ContactForm() {
               <legend className="text-base/6 text-neutral-500">Budget</legend>
               <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <RadioInput
-                  label="Subscription (Monthly / Annual)"
+                  label="Development Subscription ($1k+ / month)"
                   name="budget"
                   value="subscription"
                   required
                 />
                 <RadioInput
-                  label="Webflow / Landing Page ($3k - $5k)"
+                  label="Webflow Marketing Site ($1.5k - $5k+)"
                   name="budget"
                   value="webflow"
                 />
                 <RadioInput
-                  label="Custom Web App / MVP ($8k - $15k)"
+                  label="Custom Web App / MVP ($3.5k - $12k+)"
                   name="budget"
                   value="mvp"
                 />

@@ -198,38 +198,38 @@ function Services() {
 
 const pricingPlans = [
   {
-    name: 'Webflow Sprint',
-    price: 'Starting at $3,000',
+    name: 'Webflow Marketing Sites',
+    price: 'Starting at $1,500',
     description:
       'High-converting marketing websites and landing pages built to grow your business.',
     features: [
       'Custom Figma design',
-      'Lightning-fast Webflow development',
+      'Webflow development',
       'Basic SEO setup',
-      'Delivered in 2-3 weeks',
+      'Typical range: $1,500 - $5,000+',
     ],
   },
   {
-    name: 'Custom MVP',
-    price: 'Starting at $8,000',
+    name: 'Custom Web Applications',
+    price: 'Starting at $3,500',
     description:
       'Powerful, scalable web applications for startups ready to launch their product.',
     features: [
-      'Complex frontend UI/UX',
+      'Custom frontend UI/UX',
       'Next.js & React development',
       'API & Database integration',
-      'Delivered in 4-8 weeks',
+      'Typical range: $3,500 - $12,000+',
     ],
   },
   {
-    name: 'Dedicated Partner',
-    price: '$2,500 / month',
+    name: 'Development Subscription',
+    price: 'From $1,000 / month',
     description:
-      'Pause or cancel anytime. Get dedicated design and development support without hiring full-time.',
+      'Pause anytime. Get dedicated design and development support without hiring full-time.',
     features: [
       'One active request at a time',
-      'Unlimited revisions',
-      'Figma, Webflow & Next.js tasks',
+      'Unlimited task queue',
+      'Core Support ($1,000) and Growth Partner ($2,000) tiers',
       'Average 48-72 hour delivery',
     ],
   },

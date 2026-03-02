@@ -33,7 +33,7 @@ function ContactDetails() {
             ['Direct Inquiries', 'connor@connorco.dev'],
             ['Agency Partnerships', 'connor@connorco.dev'],
           ].map(([label, email]) => (
-            <div key={email}>
+            <div key={`${label}-${email}`}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
               <dd>
                 <Link

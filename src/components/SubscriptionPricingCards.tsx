@@ -17,75 +17,92 @@ const billingOptions: Array<{
   {
     key: 'monthly',
     label: 'Monthly',
-    price: '$2,500 / mo',
-    note: 'Pause or cancel anytime',
+    price: '$1,000+ / month',
+    note: 'Minimum subscription level',
   },
   {
     key: 'quarterly',
     label: 'Quarterly',
-    price: '$6,750 / quarter',
-    note: 'Save 10%',
+    price: '$3,000+ / quarter',
+    note: 'Same scope, paid quarterly',
   },
   {
     key: 'yearly',
-    label: 'Yearly (Save 15%)',
-    price: '$25,000 / year',
-    note: 'Get 2 months free',
+    label: 'Yearly',
+    price: '$12,000+ / year',
+    note: 'Same scope, paid yearly',
   },
 ]
 
 const plans = [
   {
-    key: 'marketing-website',
-    target: 'Local SMBs and Startup Marketing Sites',
-    price: 'Starting at $3,000',
-    title: 'Marketing Website',
+    key: 'webflow-marketing-sites',
+    target: 'SMBs, early startups, and agencies',
+    price: 'Starting at $1,500',
+    title: 'Webflow Marketing Sites',
     description:
-      'A high-converting, lightning-fast website designed to turn visitors into customers.',
+      'Modern, conversion-focused marketing websites designed in Figma and built in Webflow.',
     includes: [
-      'Custom UI/UX Design (Figma)',
-      'Webflow Development & Animations',
-      'Responsive across all devices',
-      'CMS Setup (for blogs/case studies)',
-      'Basic SEO Optimization',
-      'Delivered in 2-3 weeks',
+      'Custom UI/UX design in Figma',
+      'Webflow development',
+      'Responsive optimization',
+      'Basic SEO configuration',
+      'CMS setup (if applicable)',
+      'Typical range: $1,500 - $5,000+',
     ],
     buttonLabel: 'Start a Sprint',
     buttonHref: '/contact',
   },
   {
-    key: 'dedicated-partner',
-    target: 'Fast-moving startups and agencies',
-    title: 'Dedicated Partner',
+    key: 'custom-web-applications',
+    target: 'Startups, SaaS teams, and internal tools',
+    title: 'Custom Web Applications',
+    price: 'Starting at $3,500',
     description:
-      'Your fractional design and development department. Pause or cancel anytime.',
+      'Scalable Next.js product builds for teams that need custom software beyond templates.',
     includes: [
-      'Unlimited task requests',
-      'One active task at a time',
-      'Figma, Webflow, & Next.js support',
-      'Unlimited revisions',
-      'Average 48-72 hour delivery',
-      'No lock-in contracts',
+      'Product architecture planning',
+      'Custom UI/UX design',
+      'Next.js frontend development',
+      'Authentication integration',
+      'Database setup (Supabase / similar)',
+      'API integrations',
+      'Typical range: $3,500 - $12,000+',
     ],
-    buttonLabel: 'Subscribe Now',
+    buttonLabel: 'Discuss your app',
     buttonHref: '/contact',
   },
   {
-    key: 'custom-web-app',
-    target: 'Funded startups and SaaS founders',
-    price: 'Starting at $8,000',
-    title: 'Custom Web App',
+    key: 'redesign-projects',
+    target: 'Teams improving underperforming sites and apps',
+    price: 'Starting at $2,000',
+    title: 'Redesign Projects',
     description:
-      'A powerful, scalable web application engineered with modern frameworks.',
+      'Strategic visual and UX overhauls to improve clarity, trust, and conversion performance.',
     includes: [
-      'Complex frontend UI/UX (Figma)',
-      'Next.js & React Development',
-      'Database Integration (Prisma/Supabase)',
-      'User Authentication',
-      'API integrations',
-      'Delivered in 4-8 weeks',
+      'UX audit',
+      'Design refresh',
+      'Conversion improvements',
+      'Performance improvements',
     ],
-    buttonLabel: 'Discuss your app',
+    buttonLabel: 'Plan a redesign',
+    buttonHref: '/contact',
+  },
+  {
+    key: 'development-subscription',
+    target: 'Ongoing iteration and support',
+    price: 'Minimum $1,000 / month',
+    title: 'Development Subscription',
+    description:
+      'Flexible monthly support with one active request at a time and an unlimited task queue.',
+    includes: [
+      'Tier 1 — Core Support ($1,000/month)',
+      'Tier 2 — Growth Partner ($2,000/month)',
+      'Webflow updates, bug fixes, and minor to larger feature work',
+      '48-72 hour turnaround for small tasks',
+      'Pause anytime with no long-term lock-in contracts',
+    ],
+    buttonLabel: 'Subscribe',
     buttonHref: '/contact',
   },
 ]
@@ -100,7 +117,7 @@ export function SubscriptionPricingCards() {
 
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn className="flex justify-center">
+      <FadeIn className="mb-10 flex justify-center">
         <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-neutral-300 p-1">
           {billingOptions.map((option) => (
             <button
@@ -119,9 +136,9 @@ export function SubscriptionPricingCards() {
         </div>
       </FadeIn>
 
-      <FadeInStagger className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {plans.map((plan) => {
-          const isSubscription = plan.key === 'dedicated-partner'
+          const isSubscription = plan.key === 'development-subscription'
           const price = isSubscription ? selectedBilling.price : plan.price
           const note = isSubscription ? selectedBilling.note : null
 
