@@ -17,7 +17,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import imageLaptop from '@/images/laptop.jpg'
+import imageLaptop from '@/images/connorCoding.jpg'
 import { RootLayout } from '@/components/RootLayout'
 
 const techStack: Array<{ name: string; icon: SimpleIcon }> = [
@@ -87,8 +87,27 @@ const projects = [
     description:
       'A custom digital experience built to showcase advanced web animations, responsive design, and lightning-fast load times. Built from scratch to highlight the intersection of design and code.',
     icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-16 w-16 fill-neutral-950">
-        <path d="M12 3 14.09 8.26 20 9l-4 3.74L17.18 19 12 15.93 6.82 19 8 12.74 4 9l5.91-.74L12 3Z" />
+      <svg viewBox="0 0 45 29" aria-hidden="true" className="h-16 w-16">
+        <rect
+          clipPath="url(#portfolio-logomark-clip)"
+          className="h-16 w-0 fill-neutral-950 transition-all duration-300 group-hover:w-16"
+        />
+        <use
+          href="#portfolio-logomark-path"
+          className="stroke-neutral-950"
+          fill="none"
+          strokeWidth="0.8"
+          strokeLinejoin="round"
+        />
+        <defs>
+          <path
+            id="portfolio-logomark-path"
+            d="M25.64,0.1c2.26,0.27,4.78,0.98,6.72,1.9c2.34,1.1,5.2,3.35,5.97,4.71c0.53,0.9,0.34,1.81-0.51,2.53 c-0.58,0.49-1.23,0.68-2.21,0.65c-1.02-0.03-1.41-0.24-2.56-1.38C31.96,7.41,31.11,6.78,30,6.2c-1.54-0.8-3.13-1.32-4.78-1.56 c-0.94-0.14-3.09-0.12-4.21,0.04c-2.43,0.35-4.54,1.21-6.21,2.52c-1.82,1.44-3.03,3.16-3.6,5.11c-0.28,0.96-0.35,3.06-0.13,4.04 c0.92,4.08,4.8,7.18,9.96,7.96c1.08,0.16,3.02,0.17,4.15,0.01c0.98-0.14,2.76-0.6,3.62-0.94c1.56-0.62,3.09-1.67,4.46-3.08 c0.85-0.87,1.55-1.22,2.5-1.22c1.08,0,2.09,0.49,2.57,1.24c0.25,0.38,0.28,0.52,0.28,1.01c-0.01,0.51-0.05,0.62-0.36,1.1 c-0.79,1.19-2.43,2.62-4.19,3.67c-3.68,2.19-8.37,3.21-12.98,2.83c-2.58-0.22-5.55-1.06-7.68-2.19c-1.72-0.92-3.36-2.11-4.48-3.26 c-1.68-1.74-2.86-3.76-3.44-5.97c-0.37-1.38-0.44-3.56-0.15-5.15c0.4-2.25,1.21-3.95,2.79-5.86c2.92-3.52,7.25-5.73,12.47-6.39 C21.72-0.03,24.49-0.03,25.64,0.1z"
+          />
+          <clipPath id="portfolio-logomark-clip">
+            <use href="#portfolio-logomark-path" />
+          </clipPath>
+        </defs>
       </svg>
     ),
   },
@@ -111,7 +130,7 @@ function CaseStudies() {
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {projects.map((project) => (
             <FadeIn key={project.caseStudyHref} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="group relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                 <h3>
                   {project.icon}
                 </h3>
@@ -198,38 +217,38 @@ function Services() {
 
 const pricingPlans = [
   {
-    name: 'Webflow Marketing Sites',
-    price: 'Starting at $1,500',
+    name: 'Webflow Sprint',
+    price: 'Starting at $3,000',
     description:
       'High-converting marketing websites and landing pages built to grow your business.',
     features: [
       'Custom Figma design',
-      'Webflow development',
+      'Lightning-fast Webflow development',
       'Basic SEO setup',
-      'Typical range: $1,500 - $5,000+',
+      'Delivered in 2-3 weeks',
     ],
   },
   {
-    name: 'Custom Web Applications',
-    price: 'Starting at $3,500',
+    name: 'Custom MVP',
+    price: 'Starting at $8,000',
     description:
       'Powerful, scalable web applications for startups ready to launch their product.',
     features: [
-      'Custom frontend UI/UX',
+      'Complex frontend UI/UX',
       'Next.js & React development',
       'API & Database integration',
-      'Typical range: $3,500 - $12,000+',
+      'Delivered in 4-8 weeks',
     ],
   },
   {
-    name: 'Development Subscription',
-    price: 'From $1,000 / month',
+    name: 'Dedicated Partner',
+    price: '$2,500 / month',
     description:
-      'Pause anytime. Get dedicated design and development support without hiring full-time.',
+      'Pause or cancel anytime. Get dedicated design and development support without hiring full-time.',
     features: [
       'One active request at a time',
-      'Unlimited task queue',
-      'Core Support ($1,000) and Growth Partner ($2,000) tiers',
+      'Unlimited revisions',
+      'Figma, Webflow & Next.js tasks',
       'Average 48-72 hour delivery',
     ],
   },
