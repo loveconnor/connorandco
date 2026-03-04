@@ -20,6 +20,15 @@
   }
 
   /* Headings */
+  :where(h1) {
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display--font-variation-settings);
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl--line-height);
+    margin-top: --spacing(16);
+  }
+
   :where(h2) {
     font-weight: var(--font-weight-semibold);
     font-family: var(--font-display);

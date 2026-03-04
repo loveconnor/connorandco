@@ -1,6 +1,18 @@
 import { type ImageProps } from 'next/image'
 import glob from 'fast-glob'
 
+async function importEntryModule(directory: string, filename: string) {
+  if (directory === 'blog') {
+    return import(`@/app/blog/${filename}`)
+  }
+
+  if (directory === 'work') {
+    return import(`@/app/work/${filename}`)
+  }
+
+  throw new Error(`Unsupported MDX directory: ${directory}`)
+}
+
 async function loadEntries<T extends { date: string }>(
   directory: string,
   metaName: string,
@@ -9,7 +21,7 @@ async function loadEntries<T extends { date: string }>(
     await Promise.all(
       (await glob('**/page.mdx', { cwd: `src/app/${directory}` })).map(
         async (filename) => {
-          let metadata = (await import(`../app/${directory}/${filename}`))[
+          let metadata = (await importEntryModule(directory, filename))[
             metaName
           ] as T
           return {

@@ -1,0 +1,270 @@
+import imageChelseaHagon from './connor.jpg'
+import { Skeleton } from '@/components/ui/skeleton'
+
+export const article = {
+  date: '2026-03-04',
+  title: 'Why Many Startup Websites Feel Slow Even When They Load Quickly',
+  description:
+    'Website performance is not only about load time. Design decisions, layout stability, and interface feedback determine whether a site feels fast to users.',
+  author: {
+    name: 'Connor',
+    role: 'Founder & Lead Developer',
+    image: { src: imageChelseaHagon },
+  },
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+---
+
+# When a Website Feels Slow
+
+A website can load in under two seconds and still feel slow to the person using it.
+
+This happens often on startup websites. The infrastructure may be fast. The hosting may be good. The Lighthouse score may look fine. But the experience still feels sluggish.
+
+The reason is that speed is not only technical. It is also visual and psychological. What users see in the first second matters more than what the performance report says.
+
+Perceived performance describes how fast a website *feels* to a user, not just how fast it technically loads.
+
+Several design decisions influence this perception. When these decisions are handled well, the interface feels fast and responsive even on slower networks.
+
+---
+
+# Showing Structure Immediately
+
+One simple technique used by many large platforms is skeleton loading.
+
+Instead of showing a blank page while content loads, the interface first displays a simple outline of the layout. Users immediately see where images, text, and content will appear.
+
+You can see this on platforms like YouTube or LinkedIn. Gray placeholder blocks appear where videos or posts will load.
+
+<div className="not-prose my-8 grid gap-6 md:grid-cols-2">
+  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+    <div className="border-b border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900">
+      Blank screen during loading
+    </div>
+    <div className="flex h-56 flex-col items-center justify-center gap-2 bg-white">
+      <p className="text-sm font-medium text-neutral-500">Blank page</p>
+      <p className="text-sm text-neutral-400">Nothing visible</p>
+    </div>
+  </div>
+
+  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+    <div className="border-b border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900">
+      Skeleton layout appears immediately
+    </div>
+    <div className="flex h-56 items-center p-4">
+      <div className="flex w-full items-center gap-4">
+        <Skeleton className="size-10 rounded-full bg-neutral-300" />
+        <div className="flex flex-1 flex-col">
+          <Skeleton className="my-0.5 h-4 w-full max-w-56 bg-neutral-300" />
+          <div className="flex w-full max-w-56 items-center gap-1">
+            <Skeleton className="my-0.5 h-4 w-1/2 bg-neutral-300" />
+            <Skeleton className="my-0.5 h-4 w-1/2 bg-neutral-300" />
+          </div>
+        </div>
+        <Skeleton className="h-6 w-16 bg-neutral-300" />
+      </div>
+    </div>
+    <div className="px-4 pb-4">
+      <p className="text-sm text-neutral-500">Skeleton layout appears immediately</p>
+    </div>
+  </div>
+</div>
+
+<div className="text-sm text-neutral-600">
+  Example of skeleton loading used to show structure before content is fully loaded.
+</div>
+
+This small change improves perceived speed because users understand the page structure immediately. A skeleton layout gives people something to process while the content finishes loading.
+
+Skeleton screens work better than loading spinners because they communicate progress instead of simply showing that the system is busy.
+
+**For example:**
+
+Bad experience
+User clicks a page and sees a white screen for two seconds.
+
+Better experience
+User clicks a page and immediately sees the layout of the page with placeholders for content.
+
+The second version feels faster even if the actual load time is identical.
+
+---
+
+# When Layout Shifts Break the Experience
+
+Another common issue is layout movement while the page loads.
+
+You have probably seen this before. You try to click a button, but the page shifts and the button moves right before you click.
+
+This behavior is measured by a performance metric called **Cumulative Layout Shift (CLS)**. It measures how much elements move while the page is loading.
+
+Here is a simple example.
+
+A marketing page loads like this:
+
+1. Headline appears
+2. Image loads afterward
+3. The image pushes the text down
+
+Now the page jumps.
+
+Users lose their place and the interface feels unstable.
+
+<div className="not-prose my-8 grid gap-6 md:grid-cols-2">
+  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+    <div className="border-b border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900">
+      Before load
+    </div>
+    <div className="space-y-4 p-4">
+      <div className="h-6 w-32 rounded bg-neutral-200" />
+      <div className="space-y-2">
+        <div className="h-3 w-full rounded bg-neutral-200" />
+        <div className="h-3 w-5/6 rounded bg-neutral-200" />
+      </div>
+      <div className="inline-flex rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white">
+        Button
+      </div>
+    </div>
+  </div>
+
+  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+    <div className="border-b border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900">
+      After image loads
+    </div>
+    <div className="space-y-4 p-4">
+      <div className="h-6 w-32 rounded bg-neutral-200" />
+      <div className="h-24 rounded-xl bg-neutral-300" />
+      <div className="space-y-2">
+        <div className="h-3 w-full rounded bg-neutral-200" />
+        <div className="h-3 w-5/6 rounded bg-neutral-200" />
+      </div>
+      <div className="flex items-center gap-2 text-xs font-medium text-neutral-500">
+        <span aria-hidden="true">↓</span>
+        <span>Button moved</span>
+      </div>
+      <div className="inline-flex rounded-lg bg-neutral-950 ring-2 ring-neutral-300 px-4 py-2 text-sm font-semibold text-white">
+        Button
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="text-sm text-neutral-600">
+  Layout shifts happen when elements move after the page renders.
+</div>
+
+The fix is simple.
+
+Reserve space for elements before they load.
+
+Images should always have defined dimensions. Components should keep their layout space even before data arrives.
+
+This prevents movement and keeps the interface predictable.
+
+---
+
+# Visual Hierarchy and Reading Speed
+
+Another factor that affects perceived speed is visual hierarchy.
+
+When users land on a page, they scan first. They are looking for three things:
+
+* What this page is about
+* Whether it is relevant
+* What action to take next
+
+If the design does not make this obvious, users pause and search for orientation. That pause feels like slowness.
+
+Compare these two landing pages.
+
+<div className="not-prose my-8 grid gap-6 md:grid-cols-2">
+  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+    <div className="border-b border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900">
+      Example A
+    </div>
+    <div className="space-y-4 p-4">
+      <div className="h-24 rounded-xl bg-neutral-200" />
+      <div className="h-4 w-28 rounded bg-neutral-300" />
+      <div className="grid grid-cols-2 gap-2">
+        <div className="h-9 rounded-lg bg-neutral-900" />
+        <div className="h-9 rounded-lg bg-neutral-700" />
+      </div>
+      <div className="grid grid-cols-3 gap-2">
+        <div className="h-12 rounded-lg bg-neutral-200" />
+        <div className="h-12 rounded-lg bg-neutral-300" />
+        <div className="h-12 rounded-lg bg-neutral-200" />
+      </div>
+    </div>
+  </div>
+
+  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+    <div className="border-b border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900">
+      Example B
+    </div>
+    <div className="space-y-4 p-4">
+      <div className="h-8 w-3/4 rounded bg-neutral-300" />
+      <div className="space-y-2">
+        <div className="h-3 w-full rounded bg-neutral-200" />
+        <div className="h-3 w-5/6 rounded bg-neutral-200" />
+      </div>
+      <div className="h-10 w-36 rounded-lg bg-neutral-900" />
+    </div>
+  </div>
+</div>
+
+The second page feels faster because users understand it instantly.
+
+Good hierarchy reduces thinking time. Less thinking means the interface feels faster.
+
+---
+
+# Motion That Helps Instead of Distracts
+
+Animation can also influence perceived performance.
+
+Small motion cues tell users the interface is responding. A button press animation or a subtle transition reassures the user that the system is working.
+
+Well designed motion can make an interface feel more responsive and faster.
+
+However, heavy animations can have the opposite effect.
+
+Examples of problematic motion include:
+
+Large hero animations that delay content visibility
+Scroll effects that block reading
+Long entrance animations that hide text
+
+Animation should guide attention. It should never delay information.
+
+---
+
+# What Fast Interfaces Actually Do
+
+Fast websites are not just technically optimized. They are designed with clarity and stability.
+
+The best interfaces usually follow a few simple rules:
+
+Content structure appears immediately
+Layouts remain stable during loading
+Primary actions are visible without searching
+Motion supports interaction rather than decoration
+
+When these principles are applied together, the website does not only load quickly. It also feels fast.
+
+---
+
+# Final Thought
+
+Performance is often treated as a technical problem.
+
+In practice it is also a design problem.
+
+Two websites with the same hosting, framework, and load time can feel completely different to users. The difference is usually structure, hierarchy, and interface feedback.
+
+Performance is not only about how fast a website loads. It is about how quickly a user understands and interacts with the interface.
