@@ -1,4 +1,4 @@
-import imageChelseaHagon from './connor.jpg'
+import imageConnorLove from './connor.jpg'
 import { Skeleton } from '@/components/ui/skeleton'
 
 export const article = {
@@ -9,7 +9,7 @@ export const article = {
   author: {
     name: 'Connor',
     role: 'Founder & Lead Developer',
-    image: { src: imageChelseaHagon },
+    image: { src: imageConnorLove },
   },
 }
 
@@ -30,7 +30,7 @@ The reason is that speed is not only technical. It is also visual and psychologi
 
 Perceived performance describes how fast a website *feels* to a user, not just how fast it technically loads.
 
-Several design decisions influence this perception. When these decisions are handled well, the interface feels fast and responsive even on slower networks.
+Several design decisions shape this perception. When these decisions are handled well, the interface feels fast and responsive even on slower networks.
 
 ---
 
@@ -41,6 +41,8 @@ One simple technique used by many large platforms is skeleton loading.
 Instead of showing a blank page while content loads, the interface first displays a simple outline of the layout. Users immediately see where images, text, and content will appear.
 
 You can see this on platforms like YouTube or LinkedIn. Gray placeholder blocks appear where videos or posts will load.
+
+Many large platforms rely heavily on perceived performance techniques. On YouTube, skeleton loaders appear instantly while video metadata loads. On LinkedIn, feed posts render as placeholders before content arrives. These patterns make the interface feel responsive even when data still needs to load.
 
 <div className="not-prose my-8 grid gap-6 md:grid-cols-2">
   <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
@@ -236,9 +238,9 @@ However, heavy animations can have the opposite effect.
 
 Examples of problematic motion include:
 
-Large hero animations that delay content visibility
-Scroll effects that block reading
-Long entrance animations that hide text
+- Large hero animations that delay content visibility
+- Scroll effects that block reading
+- Long entrance animations that hide text
 
 Animation should guide attention. It should never delay information.
 
@@ -250,10 +252,10 @@ Fast websites are not just technically optimized. They are designed with clarity
 
 The best interfaces usually follow a few simple rules:
 
-Content structure appears immediately
-Layouts remain stable during loading
-Primary actions are visible without searching
-Motion supports interaction rather than decoration
+- Content structure appears immediately
+- Layouts remain stable during loading
+- Primary actions are visible without searching
+- Motion supports interaction rather than decoration
 
 When these principles are applied together, the website does not only load quickly. It also feels fast.
 
@@ -265,6 +267,6 @@ Performance is often treated as a technical problem.
 
 In practice it is also a design problem.
 
-Two websites with the same hosting, framework, and load time can feel completely different to users. The difference is usually structure, hierarchy, and interface feedback.
+Two websites with identical hosting, infrastructure, and load time can feel completely different to users. The difference is usually structure, hierarchy, and interface feedback.
 
 Performance is not only about how fast a website loads. It is about how quickly a user understands and interacts with the interface.
