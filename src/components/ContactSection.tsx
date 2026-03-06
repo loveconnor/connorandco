@@ -9,7 +9,7 @@ export function ContactSection() {
       <FadeIn className="-mx-6 rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
-            <h2 className="font-display text-3xl font-medium text-balance text-white sm:text-4xl">
+            <h2 className="text-3xl font-medium text-balance text-white sm:text-4xl">
               Need help launching, improving conversion, or handling overflow work?
             </h2>
             <p className="mt-6 text-base text-neutral-300">
@@ -23,7 +23,7 @@ export function ContactSection() {
               </Button>
             </div>
             <div className="mt-10 border-t border-white/10 pt-10">
-              <h3 className="font-display text-base font-semibold text-white">
+              <h3 className="text-base font-semibold text-white">
                 Our offices
               </h3>
               <Offices

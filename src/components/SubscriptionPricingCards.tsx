@@ -143,7 +143,7 @@ export function SubscriptionPricingCards() {
             <FadeIn key={plan.title} className="flex h-full">
               <article className="flex h-full w-full flex-col rounded-3xl p-8 ring-1 ring-neutral-950/10">
                 <header>
-                  <h2 className="font-display text-2xl font-medium text-neutral-950">
+                  <h2 className="text-2xl font-medium text-neutral-950">
                     {plan.title}
                   </h2>
                   <span className="my-3 block text-2xl font-semibold text-neutral-950">

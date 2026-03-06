@@ -1,1 +1,5 @@
-/* Fonts are loaded through next/font/local in src/app/layout.tsx. */
+/* LoveSans is loaded through next/font/local in src/app/layout.tsx. */
+
+body {
+	font-family: var(--font-sans);
+}

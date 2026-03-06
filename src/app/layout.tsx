@@ -5,14 +5,53 @@ import Script from 'next/script'
 import { createSiteJsonLd, siteConfig } from '@/lib/seo'
 import '@/styles/tailwind.css'
 
-const monaSans = localFont({
-  src: '../fonts/Mona-Sans.var.woff2',
-  weight: '200 900',
-  style: 'normal',
+const loveSans = localFont({
+  src: [
+    {
+      path: '../fonts/LoveSans-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/LoveSans-RegularItalic.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/LoveSans-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/LoveSans-MediumItalic.woff2',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/LoveSans-Semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/LoveSans-SemiboldItalic.woff2',
+      weight: '600',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/LoveSans-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/LoveSans-BoldItalic.woff2',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
   display: 'swap',
   preload: true,
   fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
-  variable: '--font-mona-sans',
+  variable: '--font-love-sans',
 })
 
 export const metadata: Metadata = {
@@ -67,7 +106,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${monaSans.variable} h-full bg-neutral-950 text-base antialiased`}
+      className={`${loveSans.variable} h-full bg-neutral-950 text-base antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <Script

@@ -35,7 +35,7 @@ function Clients() {
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
+          <h2 className="text-center text-sm font-semibold tracking-wider text-white sm:text-left">
             We use the right tools for the work, not the same process every time.
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
@@ -144,7 +144,7 @@ function CaseStudies() {
                   </span>
                   <span>{project.category}</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 text-2xl font-semibold text-neutral-950">
                   {project.title}
                 </p>
                 <p className="mt-4 text-base text-neutral-600">
@@ -269,7 +269,7 @@ function Pricing() {
           {pricingPlans.map((plan) => (
             <FadeIn key={plan.name} className="flex">
               <article className="flex w-full flex-col rounded-3xl p-8 ring-1 ring-neutral-950/10">
-                <h3 className="font-display text-2xl font-semibold text-neutral-950">
+                <h3 className="text-2xl font-semibold text-neutral-950">
                   {plan.name}
                 </h3>
                 <p className="mt-4 text-sm font-semibold text-neutral-950">
@@ -326,7 +326,7 @@ export default async function Home() {
 
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
+          <h1 className="text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
             Websites and product frontends that help people trust and buy.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">

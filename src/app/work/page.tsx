@@ -76,7 +76,7 @@ function CaseStudies() {
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
+        <h2 className="text-2xl font-semibold text-neutral-950">
           Case studies
         </h2>
       </FadeIn>
@@ -102,7 +102,7 @@ function CaseStudies() {
                   </div>
                 </div>
                 <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
-                  <p className="font-display text-4xl font-medium text-neutral-950">
+                  <p className="text-4xl font-medium text-neutral-950">
                     {project.title}
                   </p>
                   <div className="mt-6 space-y-6 text-base text-neutral-600">
@@ -140,7 +140,7 @@ function Clients() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
+        <h2 className="text-2xl font-semibold text-neutral-950">
           Powered by modern, scalable technology.
         </h2>
       </FadeIn>

@@ -65,7 +65,7 @@ export function FooterNewsletterForm() {
 
   return (
     <form className="max-w-sm" onSubmit={handleSubmit}>
-      <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
+      <h2 className="text-sm font-semibold tracking-wider text-neutral-950">
         Subscribe to the blog
       </h2>
       <p className="mt-4 text-sm text-neutral-700">

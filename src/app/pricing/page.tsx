@@ -85,7 +85,7 @@ export default function PricingPage() {
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <FadeIn className="rounded-3xl p-8 ring-1 ring-neutral-950/10">
-            <h2 className="font-display text-2xl font-medium text-neutral-950">
+            <h2 className="text-2xl font-medium text-neutral-950">
               Engagement Basics
             </h2>
             <ul className="mt-6 space-y-3 text-sm text-neutral-700">
@@ -96,7 +96,7 @@ export default function PricingPage() {
           </FadeIn>
 
           <FadeIn className="rounded-3xl p-8 ring-1 ring-neutral-950/10">
-            <h2 className="font-display text-2xl font-medium text-neutral-950">
+            <h2 className="text-2xl font-medium text-neutral-950">
               Common Add-Ons
             </h2>
             <ul className="mt-6 space-y-3 text-sm text-neutral-700">
@@ -107,7 +107,7 @@ export default function PricingPage() {
           </FadeIn>
 
           <FadeIn className="rounded-3xl p-8 ring-1 ring-neutral-950/10">
-            <h2 className="font-display text-2xl font-medium text-neutral-950">
+            <h2 className="text-2xl font-medium text-neutral-950">
               Payment Structure
             </h2>
             <ul className="mt-6 space-y-3 text-sm text-neutral-700">
@@ -128,7 +128,7 @@ export default function PricingPage() {
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn className="rounded-4xl bg-neutral-950 px-8 py-16 sm:px-12 sm:py-20">
-          <h2 className="font-display text-3xl font-medium tracking-tight text-balance text-white sm:text-4xl">
+          <h2 className="text-3xl font-medium tracking-tight text-balance text-white sm:text-4xl">
             Need overflow capacity without adding headcount?
           </h2>
           <p className="mt-6 max-w-3xl text-xl text-neutral-300">
@@ -146,7 +146,7 @@ export default function PricingPage() {
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
-          <h2 className="font-display text-4xl font-medium tracking-tight text-balance text-neutral-950 sm:text-5xl">
+          <h2 className="text-4xl font-medium tracking-tight text-balance text-neutral-950 sm:text-5xl">
             Frequently Asked Questions
           </h2>
         </FadeIn>
@@ -154,7 +154,7 @@ export default function PricingPage() {
           {faqs.map((faq) => (
             <FadeIn key={faq.question}>
               <article className="rounded-3xl p-8 ring-1 ring-neutral-950/10">
-                <h3 className="font-display text-2xl font-semibold text-neutral-950">
+                <h3 className="text-2xl font-semibold text-neutral-950">
                   {faq.question}
                 </h3>
                 <p className="mt-4 text-base text-neutral-600">{faq.answer}</p>
@@ -166,7 +166,7 @@ export default function PricingPage() {
 
       <Container className="mt-24 mb-24 sm:mt-32 sm:mb-32 lg:mt-40 lg:mb-40">
         <FadeIn className="rounded-4xl bg-neutral-950 px-8 py-16 text-center sm:px-12 sm:py-20">
-          <h2 className="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-balance text-white sm:text-5xl">
+          <h2 className="mx-auto max-w-4xl text-4xl font-medium tracking-tight text-balance text-white sm:text-5xl">
             Ready to pick the right offer and move?
           </h2>
           <div className="mt-8 flex justify-center">
