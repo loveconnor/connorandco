@@ -1,0 +1,49 @@
+<svg width="756" height="439" viewBox="0 0 756 439" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="756" height="439" fill="white"/>
+
+  <text x="24" y="42" fill="black" font-family="LoveSans, sans-serif" font-size="16" font-weight="400">
+    Upright / Italic
+  </text>
+
+  <text x="24" y="102" fill="black" font-family="LoveSans, sans-serif" font-size="18" font-weight="400">
+    Regular
+  </text>
+  <text x="408" y="102" fill="black" font-family="LoveSans, sans-serif" font-size="18" font-weight="400">
+    Regular Italic
+  </text>
+
+  <text x="24" y="146" fill="black" font-family="LoveSans, sans-serif" font-size="31" font-weight="400">
+    Typography matters
+  </text>
+  <text x="408" y="146" fill="black" font-family="LoveSans, sans-serif" font-size="31" font-weight="400" font-style="italic">
+    Typography matters
+  </text>
+
+  <text x="24" y="222" fill="black" font-family="LoveSans, sans-serif" font-size="18" font-weight="500">
+    Medium
+  </text>
+  <text x="408" y="222" fill="black" font-family="LoveSans, sans-serif" font-size="18" font-weight="500">
+    Medium Italic
+  </text>
+
+  <text x="24" y="266" fill="black" font-family="LoveSans, sans-serif" font-size="31" font-weight="500">
+    Designed for clarity
+  </text>
+  <text x="408" y="266" fill="black" font-family="LoveSans, sans-serif" font-size="31" font-weight="500" font-style="italic">
+    Designed for clarity
+  </text>
+
+  <text x="24" y="342" fill="black" font-family="LoveSans, sans-serif" font-size="18" font-weight="700">
+    Bold
+  </text>
+  <text x="408" y="342" fill="black" font-family="LoveSans, sans-serif" font-size="18" font-weight="700">
+    Bold Italic
+  </text>
+
+  <text x="24" y="386" fill="black" font-family="LoveSans, sans-serif" font-size="31" font-weight="700">
+    Built to stand out
+  </text>
+  <text x="408" y="386" fill="black" font-family="LoveSans, sans-serif" font-size="31" font-weight="700" font-style="italic">
+    Built to stand out
+  </text>
+</svg>

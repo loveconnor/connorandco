@@ -54,8 +54,8 @@ export default async function CaseStudyLayout({
               </Container>
             </div>
 
-            <div className="border-y border-neutral-200 bg-neutral-100">
-              <div className="mx-auto -my-px max-w-304 bg-neutral-200">
+            <div className="border-y border-neutral-200 bg-white">
+              <div className="mx-auto -my-px max-w-304">
                 <GrayscaleTransitionImage
                   {...caseStudy.image}
                   quality={90}

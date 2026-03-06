@@ -22,6 +22,24 @@ import { createMetadata } from '@/lib/seo'
 
 const projects = [
   {
+  client: 'Connor Co.',
+  service: 'Custom Typeface Design',
+  date: '2026',
+  href: '/work/lovesans',
+  title: 'Designing LoveSans, a custom typeface system.',
+  summary: [
+    'LoveSans is a self-initiated sans-serif font family designed for modern brands, websites, and digital products. The project included multiple weights, italic styles, and production-ready web font exports.',
+  ],
+  icon: (
+    <div
+      aria-hidden="true"
+      className="flex h-16 w-16 items-center justify-center text-5xl font-bold tracking-tight text-neutral-950"
+    >
+      Aa
+    </div>
+  ),
+},
+  {
     client: 'LoveUI',
     service: 'Next.js Web App',
     date: '2026',
