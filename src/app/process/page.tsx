@@ -1,5 +1,3 @@
-import { type Metadata } from 'next'
-
 import { Blockquote } from '@/components/Blockquote'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
@@ -15,6 +13,7 @@ import imageLaptop from '@/images/connorCoding.jpg'
 import imageMeeting from '@/images/meeting.png'
 import imageWhiteboard from '@/images/strategy.png'
 import { RootLayout } from '@/components/RootLayout'
+import { createMetadata } from '@/lib/seo'
 
 function Section({
   title,
@@ -209,11 +208,12 @@ function Values() {
   )
 }
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Our Process',
   description:
     'We believe in a streamlined, transparent approach to building digital products from design to deployment.',
-}
+  path: '/process',
+})
 
 export default function Process() {
   return (

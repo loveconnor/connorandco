@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import {
   siFigma,
   siNextdotjs,
@@ -19,6 +18,7 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { Testimonial } from '@/components/Testimonial'
 import { RootLayout } from '@/components/RootLayout'
+import { createMetadata } from '@/lib/seo'
 
 const projects = [
   {
@@ -172,11 +172,12 @@ function Clients() {
   )
 }
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Our Work',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
-}
+  path: '/work',
+})
 
 export default async function Work() {
   return (

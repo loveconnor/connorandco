@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -11,12 +10,14 @@ import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
 import { formatDate } from '@/lib/formatDate'
 import { loadArticles } from '@/lib/mdx'
+import { createMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Blog',
   description:
     'Thoughts, tutorials, and deep dives on building scalable digital products with Next.js, Webflow, and modern UI/UX design.',
-}
+  path: '/blog',
+})
 
 export default async function Blog() {
   let articles = await loadArticles()

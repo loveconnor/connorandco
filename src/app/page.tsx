@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import {
   siFigma,
   siNextdotjs,
@@ -17,6 +16,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
+import { createMetadata } from '@/lib/seo'
 import imageLaptop from '@/images/connorCoding.jpg'
 import { RootLayout } from '@/components/RootLayout'
 
@@ -298,10 +298,11 @@ function Pricing() {
   )
 }
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   description:
     'We are a development studio working at the intersection of design and technology.',
-}
+  path: '/',
+})
 
 export default async function Home() {
   return (

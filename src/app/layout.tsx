@@ -1,12 +1,18 @@
 import { type Metadata } from 'next'
 import Script from 'next/script'
 
+import { siteConfig } from '@/lib/seo'
 import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     template: '%s | Connor & Co.',
     default: 'Connor & Co. | Webflow & Next.js Development Studio',
+  },
+  description: 'We are a development studio working at the intersection of design and technology.',
+  alternates: {
+    canonical: '/',
   },
 }
 

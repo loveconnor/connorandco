@@ -1,11 +1,10 @@
-import { type Metadata } from 'next'
-
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
 import { SubscriptionPricingCards } from '@/components/SubscriptionPricingCards'
+import { createMetadata } from '@/lib/seo'
 
 const faqs = [
   {
@@ -60,11 +59,12 @@ const paymentStructure = [
   'Subscriptions billed monthly in advance',
 ]
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Services & Pricing',
   description:
     'Premium development services with transparent pricing for Webflow websites, custom Next.js apps, and ongoing monthly support.',
-}
+  path: '/pricing',
+})
 
 export default function PricingPage() {
   return (

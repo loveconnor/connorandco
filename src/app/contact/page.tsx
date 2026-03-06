@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { Border } from '@/components/Border'
@@ -9,6 +8,7 @@ import { Offices } from '@/components/Offices'
 import { PageIntro } from '@/components/PageIntro'
 import { SocialMedia } from '@/components/SocialMedia'
 import { RootLayout } from '@/components/RootLayout'
+import { createMetadata } from '@/lib/seo'
 
 function ContactDetails() {
   return (
@@ -58,11 +58,12 @@ function ContactDetails() {
   )
 }
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Contact Us',
   description:
     'Tell us about your project, timeline, and goals. We will get back to you within 24 hours to schedule an intro call.',
-}
+  path: '/contact',
+})
 
 export default function Contact() {
   return (

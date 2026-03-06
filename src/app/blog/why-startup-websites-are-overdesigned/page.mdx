@@ -1,4 +1,5 @@
 import imageConnorLove from './connor.jpg'
+import { createMetadata } from '@/lib/seo'
 
 export const article = {
   date: '2026-03-06',
@@ -12,10 +13,11 @@ export const article = {
   },
 }
 
-export const metadata = {
+export const metadata = createMetadata({
   title: article.title,
   description: article.description,
-}
+  path: '/blog/why-startup-websites-are-overdesigned',
+})
 
 ---
 
