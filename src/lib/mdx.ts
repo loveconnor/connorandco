@@ -17,22 +17,30 @@ async function loadEntries<T extends { date: string }>(
   directory: string,
   metaName: string,
 ): Promise<Array<MDXEntry<T>>> {
-  return (
-    await Promise.all(
-      (await glob('**/page.mdx', { cwd: `src/app/${directory}` })).map(
-        async (filename) => {
-          let metadata = (await importEntryModule(directory, filename))[
-            metaName
-          ] as T
-          return {
-            ...metadata,
-            metadata,
-            href: `/${directory}/${filename.replace(/\/page\.mdx$/, '')}`,
-          }
-        },
-      ),
-    )
-  ).sort((a, b) => b.date.localeCompare(a.date))
+  const files = await glob('**/page.mdx', { cwd: `src/app/${directory}` })
+  const entries: Array<MDXEntry<T>> = []
+
+  await Promise.all(
+    files.map(async (filename) => {
+      const moduleExports = await importEntryModule(directory, filename)
+      const metadata = moduleExports[metaName] as T | undefined
+
+      if (!metadata?.date) {
+        console.warn(
+          `[mdx] Skipping ${directory}/${filename}: missing or invalid export \`${metaName}\` with a valid \`date\` field.`,
+        )
+        return
+      }
+
+      entries.push({
+        ...metadata,
+        metadata,
+        href: `/${directory}/${filename.replace(/\/page\.mdx$/, '')}`,
+      })
+    }),
+  )
+
+  return entries.sort((a, b) => b.date.localeCompare(a.date))
 }
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
