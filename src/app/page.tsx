@@ -68,6 +68,22 @@ function Clients() {
 
 const projects = [
   {
+    caseStudyHref: '/work/lovesans',
+    year: '2026',
+    category: 'Custom Typeface Design',
+    title: 'Designing LoveSans, a custom typeface system.',
+    description:
+      'LoveSans is a self-initiated sans-serif font family designed for modern brands, websites, and digital products. The project included multiple weights, italic styles, and production-ready web font exports.',
+    icon: (
+      <div
+        aria-hidden="true"
+        className="flex h-16 w-16 items-center justify-center text-5xl font-bold tracking-tight text-neutral-950"
+      >
+        Aa
+      </div>
+    ),
+  },
+  {
     caseStudyHref: '/work/loveui',
     year: '2026',
     category: 'Next.js Web App',
@@ -77,38 +93,6 @@ const projects = [
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-16 w-16 fill-neutral-950">
         <path d="M7.5 8.5 5 12l2.5 3.5h2L7 12l2.5-3.5h-2Zm9 0L19 12l-2.5 3.5h-2L17 12l-2.5-3.5h2ZM10.5 18h2l1-12h-2l-1 12Z" />
-      </svg>
-    ),
-  },
-  {
-    caseStudyHref: '/work/portfolio',
-    year: '2024',
-    category: 'React/Next.js',
-    title: 'High-performance digital portfolio experience.',
-    description:
-      'A custom digital experience built to showcase advanced web animations, responsive design, and lightning-fast load times. Built from scratch to highlight the intersection of design and code.',
-    icon: (
-      <svg viewBox="0 0 45 29" aria-hidden="true" className="h-16 w-16">
-        <rect
-          clipPath="url(#portfolio-logomark-clip)"
-          className="h-16 w-0 fill-neutral-950 transition-all duration-300 group-hover:w-16"
-        />
-        <use
-          href="#portfolio-logomark-path"
-          className="stroke-neutral-950"
-          fill="none"
-          strokeWidth="0.8"
-          strokeLinejoin="round"
-        />
-        <defs>
-          <path
-            id="portfolio-logomark-path"
-            d="M25.64,0.1c2.26,0.27,4.78,0.98,6.72,1.9c2.34,1.1,5.2,3.35,5.97,4.71c0.53,0.9,0.34,1.81-0.51,2.53 c-0.58,0.49-1.23,0.68-2.21,0.65c-1.02-0.03-1.41-0.24-2.56-1.38C31.96,7.41,31.11,6.78,30,6.2c-1.54-0.8-3.13-1.32-4.78-1.56 c-0.94-0.14-3.09-0.12-4.21,0.04c-2.43,0.35-4.54,1.21-6.21,2.52c-1.82,1.44-3.03,3.16-3.6,5.11c-0.28,0.96-0.35,3.06-0.13,4.04 c0.92,4.08,4.8,7.18,9.96,7.96c1.08,0.16,3.02,0.17,4.15,0.01c0.98-0.14,2.76-0.6,3.62-0.94c1.56-0.62,3.09-1.67,4.46-3.08 c0.85-0.87,1.55-1.22,2.5-1.22c1.08,0,2.09,0.49,2.57,1.24c0.25,0.38,0.28,0.52,0.28,1.01c-0.01,0.51-0.05,0.62-0.36,1.1 c-0.79,1.19-2.43,2.62-4.19,3.67c-3.68,2.19-8.37,3.21-12.98,2.83c-2.58-0.22-5.55-1.06-7.68-2.19c-1.72-0.92-3.36-2.11-4.48-3.26 c-1.68-1.74-2.86-3.76-3.44-5.97c-0.37-1.38-0.44-3.56-0.15-5.15c0.4-2.25,1.21-3.95,2.79-5.86c2.92-3.52,7.25-5.73,12.47-6.39 C21.72-0.03,24.49-0.03,25.64,0.1z"
-          />
-          <clipPath id="portfolio-logomark-clip">
-            <use href="#portfolio-logomark-path" />
-          </clipPath>
-        </defs>
       </svg>
     ),
   },
@@ -130,8 +114,8 @@ function CaseStudies() {
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {projects.map((project) => (
-            <FadeIn key={project.caseStudyHref} className="flex">
-              <article className="group relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+            <FadeIn key={project.caseStudyHref} className="flex h-full">
+              <article className="group relative flex h-full w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                 <h3>
                   {project.icon}
                 </h3>
@@ -144,10 +128,10 @@ function CaseStudies() {
                   </span>
                   <span>{project.category}</span>
                 </p>
-                <p className="mt-6 text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 min-h-[4.5rem] text-2xl font-semibold text-neutral-950">
                   {project.title}
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 flex-1 text-base text-neutral-600">
                   {project.description}
                 </p>
                 <div className="mt-8 flex">
@@ -182,7 +166,7 @@ function Services() {
             <FadeIn className="w-135 flex-none lg:w-180">
               <StylizedImage
                 src={imageLaptop}
-                sizes="(min-width: 1024px) 41rem, 31rem"
+                sizes="(min-width: 1024px) 45rem, 34rem"
                 className="justify-center lg:justify-end"
               />
             </FadeIn>

@@ -31,7 +31,7 @@ function Section({
           <FadeIn className="w-135 flex-none lg:w-180">
             <StylizedImage
               {...image}
-              sizes="(min-width: 1024px) 41rem, 31rem"
+              sizes="(min-width: 1024px) 45rem, 34rem"
               className="justify-center lg:justify-end lg:group-even/section:justify-start"
             />
           </FadeIn>
