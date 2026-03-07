@@ -13,24 +13,32 @@ const billingOptions: Array<{
   label: string
   price: string
   note: string
+  tier1: string
+  tier2: string
 }> = [
   {
     key: 'monthly',
     label: 'Monthly',
-    price: '$1,000+ / month',
-    note: 'Minimum subscription level',
+    price: '$1,200 / month',
+    note: 'Billed monthly in advance',
+    tier1: '$1,200/month',
+    tier2: '$2,200/month',
   },
   {
     key: 'quarterly',
     label: 'Quarterly',
-    price: '$3,000+ / quarter',
-    note: 'Same scope, paid quarterly',
+    price: '$3,300 / quarter',
+    note: 'Billed quarterly in advance',
+    tier1: '$3,300/quarter',
+    tier2: '$6,300/quarter',
   },
   {
     key: 'yearly',
     label: 'Yearly',
-    price: '$12,000+ / year',
-    note: 'Same scope, paid yearly',
+    price: '$12,000 / year',
+    note: '$1,000/month equivalent, billed yearly in advance',
+    tier1: '$12,000/year',
+    tier2: '$24,000/year',
   },
 ]
 
@@ -135,9 +143,18 @@ export function SubscriptionPricingCards() {
 
       <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {plans.map((plan) => {
-          const isSubscription = plan.key === 'development-subscription'
+          const isSubscription = plan.key === 'ongoing-partner-support'
           const price = isSubscription ? selectedBilling.price : plan.price
           const note = isSubscription ? selectedBilling.note : null
+          const includes = isSubscription
+            ? [
+                `Tier 1 - Core Support (${selectedBilling.tier1})`,
+                `Tier 2 - Growth Partner (${selectedBilling.tier2})`,
+                'Webflow updates, bug fixes, and feature work',
+                '48-72 hour turnaround for small tasks',
+                'Pause anytime with no long-term lock-in contracts',
+              ]
+            : plan.includes
 
           return (
             <FadeIn key={plan.title} className="flex h-full">
@@ -160,7 +177,7 @@ export function SubscriptionPricingCards() {
                     What&apos;s included:
                   </h3>
                   <ul role="list" className="space-y-3 text-sm text-neutral-700">
-                    {plan.includes.map((item) => (
+                    {includes.map((item) => (
                       <li key={item} className="flex items-start gap-x-2">
                         <svg
                           viewBox="0 0 16 16"
