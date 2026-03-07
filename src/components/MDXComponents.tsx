@@ -18,18 +18,11 @@ export const MDXComponents = {
     ...props
   }: React.ComponentPropsWithoutRef<typeof GrayscaleTransitionImage>) {
     return (
-      <div
-        className={clsx(
-          'group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100',
-          className,
-        )}
-      >
-        <GrayscaleTransitionImage
-          {...props}
-          sizes="(min-width: 768px) 42rem, 100vw"
-          className="h-auto w-full object-contain sm:aspect-16/10 sm:object-cover"
-        />
-      </div>
+      <GrayscaleTransitionImage
+        {...props}
+        sizes="(min-width: 768px) 42rem, 100vw"
+        className={clsx('my-10 h-auto w-full object-contain', className)}
+      />
     )
   },
   StatList({
